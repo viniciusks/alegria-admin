@@ -1,29 +1,18 @@
-<section>
-  <div class="container div-login">
-    <div style="flex-grow: 2;">
-      <img class="background-img-logo" src="../../../../assets/img/logo/logo.svg" alt="Logo Alegria" srcset="">
-    </div>
-    <div class="mt-5" style="flex-grow: 1;">
-      <form>
-        <div class="row">
-          <h1>Acesse o sistema!</h1>
-        </div>
-        <div class="row">
-          <div class="col-12 col-md-12 mt-5 mb-3 text-left">
-            <div *ngIf="!this.validateForm" class="alert alert-danger" role="alert">
-              Preencha todas as informações corretamente!
-            </div>
-            <div *ngIf="this.errorFlag" class="alert alert-danger" role="alert">
-              Erro de comunicação com o servidor!
-            </div>
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email..." ngModel>
-          </div>
-        </div>
-      </form>
-    </div>
+<h5>Login</h5>
+
+<div class="row">
+  <div class="input-field col s12">
+    <input id="username" type="text" class="validate">
+    <label class="active" for="username">Username</label>
   </div>
-</section>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <input id="password" type="password" class="validate">
+    <label class="active" for="password">Senha</label>
+  </div>
+</div>
 
 <ngx-spinner bdColor="rgba(51,51,51,0.8)" color="#fff" type="ball-scale-multiple">
   <p style="font-size: 20px; color: white">Loading...</p>
