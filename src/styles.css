@@ -14,8 +14,10 @@ main {
 
 .btn-color-default {
   background-color: var(--yellow-400);
+  color: var(--yellow-900);
 }
 
 .btn-color-default:hover {
   background-color: var(--yellow-600);
+  color: var(--yellow-50);
 }
