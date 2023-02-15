@@ -1,25 +1,8 @@
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 .background-img-logo {
   position: absolute;
   left: -20%;
   top: 0%;
-  width: 50rem;
+  width: 80rem;
   -webkit-animation: spin 150s linear infinite;
   -moz-animation: spin 150s linear infinite;
   animation: spin 150s linear infinite;
@@ -30,11 +13,10 @@ section {
   min-height: 50rem;
 }
 
-.div-login {
+.login-layout {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 }
 
 .div-login form {
@@ -44,4 +26,46 @@ section {
   color: #714a28;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
+}
+
+@media only screen and (max-width: 601px) {
+  .mt-0 {
+    margin-top: 0;
+  }
+  
+  .background-img-logo {
+    width: 50rem;
+    top: 30%;
+    left: -50%;
+  }
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 601px) {
+  .background-login-layout {
+    position: relative;
+    padding: 2rem;
+    max-width: 50rem;
+    background-color: var(--yellow-50);
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
+  }
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

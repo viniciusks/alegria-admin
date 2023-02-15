@@ -21,3 +21,40 @@ main {
   background-color: var(--yellow-600);
   color: var(--yellow-50);
 }
+
+/* MARGIN-TOP */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mt-10 {
+  margin-top: 10rem;
+}
+
+/* INPUT DEFAULT */
+
+/* label focus color */
+.input-field input:focus + label {
+  color: var(--yellow-900) !important;
+}
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid var(--yellow-900) !important;
+  box-shadow: 0 1px 0 0 var(--yellow-900) !important
+}
