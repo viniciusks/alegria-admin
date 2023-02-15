@@ -28,6 +28,10 @@ section {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
 }
 
+.background-login-layout button {
+  margin: 0 1rem;
+}
+
 @media only screen and (max-width: 601px) {
   .mt-0 {
     margin-top: 0;
