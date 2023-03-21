@@ -1,0 +1,28 @@
+/* NAV STYLE */
+nav {
+    background-color: var(--yellow-300);
+    box-shadow: none;
+    padding: 0 2rem;
+}
+
+nav a.brand-logo img.logo-alegria {
+    width: 4rem;
+}
+
+nav ul a {
+    color: black;
+}
+
+/* PANEL STYLE */
+.row div.col.s3 {
+    padding: 0;
+}
+
+.container-panel-menu {
+    width: 300px;
+}
+
+/* PAGE LAYOUT STYLE */
+.page-layout {
+    padding: 1rem;
+}

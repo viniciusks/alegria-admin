@@ -3,21 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-
 // PrimeNG
 import { AccordionModule } from 'primeng/accordion'; //accordion and accordion tab
-import { MenuItem } from 'primeng/api'; //api
+import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 // Libs
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserComponent } from './components/user/user.component';
+
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, UserComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -27,8 +29,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     InputTextModule,
     FormsModule,
     NgxSpinnerModule,
+    MenuModule,
+    PanelMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
