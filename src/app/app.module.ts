@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // PrimeNG
 import { AccordionModule } from 'primeng/accordion'; //accordion and accordion tab
@@ -17,9 +18,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
+import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, UserComponent],
+  declarations: [AppComponent, HomeComponent, UserComponent, PlayerComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -31,8 +33,9 @@ import { UserComponent } from './components/user/user.component';
     NgxSpinnerModule,
     MenuModule,
     PanelMenuModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

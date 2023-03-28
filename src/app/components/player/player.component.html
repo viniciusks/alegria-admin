@@ -1,0 +1,50 @@
+<div class="mb-1 header">
+  <a class="waves-effect waves-light btn btn-color-default-success">
+    <i class="material-icons left">add</i>Novo álbum
+  </a>
+</div>
+<hr class="mb-1" />
+<div class="mb-1">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Autor</th>
+        <th>Link | Download</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let album of albums">
+        <td>{{ album.name }}</td>
+        <td>{{ album.owner }}</td>
+        <td>
+          <a
+            class="waves-effect waves-light btn btn-color-default-secondary"
+            target="_blank"
+            [href]="album.link"
+          >
+            Acessar
+          </a>
+        </td>
+        <td>
+          <a
+            class="mr-05 waves-effect waves-light btn btn-small btn-color-default-warning"
+            target="_blank"
+          >
+            <i class="material-icons">edit</i>
+          </a>
+          <a
+            class="waves-effect waves-light btn btn-small btn-color-default-danger"
+            target="_blank"
+          >
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Spinner -->
+<ngx-spinner></ngx-spinner>

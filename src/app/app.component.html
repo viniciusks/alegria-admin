@@ -1,24 +1,31 @@
 <!-- Navbar goes here -->
 <nav>
-    <div class="nav-wrapper">
-        <a href="#" routerLink="/" class="brand-logo">
-            <img class="logo-alegria" src="../assets/img/logo/logo_com_escrita.svg" alt="">
-        </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#" routerLink="/">Tela inicial</a></li>
-            <li><a href="#" routerLink="/">Sair</a></li>
-        </ul>
-    </div>
+  <div class="nav-wrapper">
+    <a href="#" routerLink="/" class="brand-logo">
+      <img
+        class="logo-alegria"
+        src="../assets/img/logo/logo_com_escrita.svg"
+        alt=""
+      />
+    </a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#" routerLink="/">Tela inicial</a></li>
+      <li><a href="#" routerLink="/">Sair</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- Page Layout here -->
 <div class="row">
-    <div class="col s3">
-        <p-panelMenu [model]="items" styleClass="container-panel-menu"></p-panelMenu>
+  <div class="col s3">
+    <p-panelMenu
+      [model]="items"
+      styleClass="container-panel-menu"
+    ></p-panelMenu>
+  </div>
+  <div class="col s9">
+    <div class="page-layout">
+      <router-outlet></router-outlet>
     </div>
-    <div class="col s9">
-        <div class="page-layout">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
+  </div>
 </div>
