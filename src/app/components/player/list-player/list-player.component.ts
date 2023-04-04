@@ -18,6 +18,7 @@ export class ListPlayerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // Comentário teste
     console.log('[OK] ListPlayerComponent');
     this._spinner.show();
     this.getAlbums();
