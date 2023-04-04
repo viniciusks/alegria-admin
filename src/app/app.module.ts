@@ -19,9 +19,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { PlayerComponent } from './components/player/player.component';
+import { AddPlayerComponent } from './components/player/add-player/add-player.component';
+import { ListPlayerComponent } from './components/player/list-player/list-player.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, UserComponent, PlayerComponent],
+  declarations: [AppComponent, HomeComponent, UserComponent, PlayerComponent, AddPlayerComponent, ListPlayerComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
