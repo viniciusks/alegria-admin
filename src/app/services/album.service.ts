@@ -19,4 +19,14 @@ export class AlbumService {
       headers: headers,
     });
   }
+
+  insertAlbum(album: any): Observable<any> {
+    let params = JSON.stringify(album);
+
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+    return this._http.post(`${this.urlPlayer}/albums`, params, {
+      headers: headers,
+    });
+  }
 }

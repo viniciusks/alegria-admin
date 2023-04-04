@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // PrimeNG
-import { AccordionModule } from 'primeng/accordion'; //accordion and accordion tab
+import { AccordionModule } from 'primeng/accordion';
 import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import { MessagesModule } from 'primeng/messages';
 
 // Libs
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -23,7 +24,14 @@ import { AddPlayerComponent } from './components/player/add-player/add-player.co
 import { ListPlayerComponent } from './components/player/list-player/list-player.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, UserComponent, PlayerComponent, AddPlayerComponent, ListPlayerComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UserComponent,
+    PlayerComponent,
+    AddPlayerComponent,
+    ListPlayerComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -36,6 +44,7 @@ import { ListPlayerComponent } from './components/player/list-player/list-player
     MenuModule,
     PanelMenuModule,
     HttpClientModule,
+    MessagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

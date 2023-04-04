@@ -5,9 +5,12 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* main {
-  flex: 1 0 auto;
-} */
+/* LAYOUT */
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* BUTTONS DEFAULT */
 
