@@ -112,3 +112,12 @@ body {
 .white-font {
   color: #fff;
 }
+
+/* FONT SIZE */
+.title-font {
+  font-size: 30px;
+}
+
+.sub-title-font {
+  font-size: 20px;
+}

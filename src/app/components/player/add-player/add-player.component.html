@@ -1,1 +1,59 @@
-<p>add-player works!</p>
+<div class="mb-1 header">
+  <span class="title-font">Novo álbum</span>
+  <a class="waves-effect waves-light btn btn-color-default-secondary" [routerLink]="['/player']">
+    <i class="material-icons left">arrow_back</i>Voltar
+  </a>
+</div>
+<hr class="mb-1">
+<div class="row">
+  <form #addPlayer="ngForm" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="name" name="name" #name="ngModel" type="text" class="validate" [(ngModel)]="album.name">
+        <label for="name">Nome</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="owner" name="owner" #owner="ngModel" type="text" class="validate" [(ngModel)]="album.owner">
+        <label for="owner">Autor</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="link" name="link" #link="ngModel" type="text" class="validate" [(ngModel)]="album.link">
+        <label for="link">Link para acesso dos arquivos</label>
+      </div>
+    </div>
+    <div class="row">
+      <span class="sub-title-font">Músicas</span>
+    </div>
+    <div class="row">
+      <div class="row col s12" *ngFor="let music of album.musics; let i = index">
+        <div>
+          <span class="mr-05">Música #{{i+1}}</span>
+          <a class="waves-effect waves-light btn btn-small btn-color-default-danger" (click)="this.removeMusic(i)">
+            <i class="material-icons">delete</i>
+          </a>
+        </div>
+        <div class="input-field col s12">
+          <input id="title{{i}}" name="title" #title="ngModel" type="text" class="validate" [(ngModel)]="music.title">
+          <label for="title{{i}}">Título</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="artist{{i}}" name="artist" #artist="ngModel" type="text" class="validate"
+            [(ngModel)]="music.artist">
+          <label for="artist{{i}}">Artista</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="cover{{i}}" name="cover" #cover="ngModel" type="text" class="validate" [(ngModel)]="music.cover">
+          <label for="cover{{i}}">Capa (link da imagem)</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="file{{i}}" name="file" #file="ngModel" type="text" class="validate" [(ngModel)]="music.file">
+          <label for="file{{i}}">Arquivo</label>
+        </div>
+      </div>
+      <a class="btn-floating btn-large waves-effect waves-light btn-color-default-success" (click)="this.addMusic()"><i
+          class="material-icons">add</i></a>
+    </div>
+  </form>
+</div>
