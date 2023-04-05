@@ -25,7 +25,18 @@ export class AppComponent {
       {
         label: 'Player',
         icon: 'pi pi-fw pi-volume-up',
-        routerLink: '/player',
+        items: [
+          {
+            label: 'Álbuns',
+            icon: 'pi pi-fw pi-folder',
+            routerLink: '/player',
+          },
+          {
+            label: 'Upload música',
+            icon: 'pi pi-fw pi-upload',
+            routerLink: '/player/upload-music-player',
+          },
+        ],
       },
       {
         label: 'Tela inicial',
