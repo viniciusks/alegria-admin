@@ -23,6 +23,22 @@ export class AppComponent {
         routerLink: '/user',
       },
       {
+        label: 'Músicas',
+        icon: 'pi pi-fw pi-play',
+        items: [
+          {
+            label: 'Acervo - In build',
+            icon: 'pi pi-fw pi-list',
+            // TODO: Colocar routerLink
+          },
+          {
+            label: 'Editor - In build',
+            icon: 'pi pi-fw pi-file-edit',
+            // TODO: Colocar routerLink
+          },
+        ],
+      },
+      {
         label: 'Player',
         icon: 'pi pi-fw pi-volume-up',
         items: [
