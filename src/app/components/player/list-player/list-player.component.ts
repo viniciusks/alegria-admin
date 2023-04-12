@@ -26,9 +26,9 @@ export class ListPlayerComponent implements OnInit {
 
   getAlbums() {
     this._albumService.getAlbums().subscribe(
-      (albums: Album[]) => {
+      (albums: any) => {
         this._spinner.hide();
-        this.albums = albums;
+        this.albums = albums.data;
       },
       (error) => {
         this._spinner.hide();
