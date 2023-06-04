@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "alegria-adm",
     "public": "dist/alegria-admin",
     "ignore": [
       "firebase.json",
