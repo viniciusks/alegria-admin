@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Message, MessageService } from 'primeng/api';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { MessageService } from 'primeng/api';
 import { Album } from 'src/app/models/album';
 import { AlbumService } from 'src/app/services/album.service';
 
 @Component({
-  selector: 'app-add-player',
-  templateUrl: './add-player.component.html',
-  styleUrls: ['./add-player.component.css'],
+  selector: 'app-edit-player',
+  templateUrl: './edit-player.component.html',
+  styleUrls: ['./edit-player.component.css'],
   providers: [AlbumService, MessageService],
 })
-export class AddPlayerComponent implements OnInit {
+export class EditPlayerComponent implements OnInit {
+  id: string;
   album: Album;
 
   constructor(
+    private _spinner: NgxSpinnerService,
     private _albumService: AlbumService,
     private _messageService: MessageService,
-    private _router: Router
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {
+    this.id = '';
     this.album = {
       name: '',
       owner: '',
@@ -27,7 +32,21 @@ export class AddPlayerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('[OK] AddPlayerComponent');
+    this._spinner.show();
+    console.log('[OK] EditPlayerComponent');
+    this._route.params.subscribe((params) => {
+      this.id = params['id'];
+      this.getOneAlbum(this.id);
+    });
+  }
+
+  getOneAlbum(id: string) {
+    this._albumService.getOneAlbum(id).subscribe((response) => {
+      if (response.status == 200) {
+        this.album = response.body.data;
+      }
+      this._spinner.hide();
+    });
   }
 
   addMusic() {
@@ -63,12 +82,12 @@ export class AddPlayerComponent implements OnInit {
         detail: 'Adicione ao menos 1 música',
       });
     } else {
-      this._albumService.insertAlbum(this.album).subscribe(() => {
+      this._albumService.updateAlbum(this.id, this.album).subscribe(() => {
         window.scroll(0, 0);
         this._messageService.clear();
         this._messageService.add({
           severity: 'success',
-          summary: 'Álbum inserido com sucesso!',
+          summary: 'Álbum atualizado com sucesso!',
           detail: 'Sendo redirecionado para a lista de álbuns em 5 segundos.',
         });
         setTimeout(() => {

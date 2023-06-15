@@ -11,6 +11,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { MessagesModule } from 'primeng/messages';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 // Libs
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -23,6 +24,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { AddPlayerComponent } from './components/player/add-player/add-player.component';
 import { ListPlayerComponent } from './components/player/list-player/list-player.component';
 import { UploadMusicPlayerComponent } from './components/player/upload-music-player/upload-music-player.component';
+import { EditPlayerComponent } from './components/player/edit-player/edit-player.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { UploadMusicPlayerComponent } from './components/player/upload-music-pla
     AddPlayerComponent,
     ListPlayerComponent,
     UploadMusicPlayerComponent,
+    EditPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { UploadMusicPlayerComponent } from './components/player/upload-music-pla
     PanelMenuModule,
     HttpClientModule,
     MessagesModule,
+    ConfirmDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
