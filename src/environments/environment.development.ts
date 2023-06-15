@@ -1,5 +1,8 @@
+const url = 'localhost';
+
 export const environment = {
   production: false,
-  apiUrl: 'http://my-prod-url',
-  apiUrlPlayer: 'http://localhost:3000',
+  apiUrl: 'https://alegriacrista-tech.com.br',
+  apiPlayer: `http://${url}:3000`,
+  apiFunction: `http://${url}:5001/alegriatech-2bf22/us-central1`,
 };
