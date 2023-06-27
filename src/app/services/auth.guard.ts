@@ -1,7 +1,9 @@
+import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import firebase from './firebase.service';
+import { UserService } from './user.service';
 
 export const authGuard = (next: ActivatedRouteSnapshot) => {
-  console.log(firebase.auth().currentUser);
+  let params: any = next.params;
+  console.log(params.id);
   return true;
 };
