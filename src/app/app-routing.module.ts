@@ -6,31 +6,38 @@ import { ListPlayerComponent } from './components/player/list-player/list-player
 import { PlayerComponent } from './components/player/player.component';
 import { UserComponent } from './components/user/user.component';
 import { EditPlayerComponent } from './components/player/edit-player/edit-player.component';
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'user',
-    component: UserComponent,
-  },
-  {
-    path: 'player',
-    component: PlayerComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '',
-        component: ListPlayerComponent,
+        component: HomeComponent,
       },
       {
-        path: 'add-player',
-        component: AddPlayerComponent,
+        path: 'user',
+        component: UserComponent,
       },
       {
-        path: 'edit-player/:id',
-        component: EditPlayerComponent,
+        path: 'player',
+        component: PlayerComponent,
+        children: [
+          {
+            path: '',
+            component: ListPlayerComponent,
+          },
+          {
+            path: 'add-player',
+            component: AddPlayerComponent,
+          },
+          {
+            path: 'edit-player/:id',
+            component: EditPlayerComponent,
+          },
+        ],
       },
     ],
   },
