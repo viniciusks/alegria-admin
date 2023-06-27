@@ -36,22 +36,22 @@
           </a>
         </div>
         <div class="input-field col s12">
-          <input id="title{{i}}" name="title" #title="ngModel" type="text" class="validate" [(ngModel)]="music.title"
+          <input id="title{{i}}" name="title{{i}}" #title="ngModel" type="text" class="validate" [(ngModel)]="music.title"
             required>
           <label for="title{{i}}">Título</label>
         </div>
         <div class="input-field col s12">
-          <input id="artist{{i}}" name="artist" #artist="ngModel" type="text" class="validate"
+          <input id="artist{{i}}" name="artist{{i}}" #artist="ngModel" type="text" class="validate"
             [(ngModel)]="music.artist" required>
           <label for="artist{{i}}">Artista</label>
         </div>
         <div class="input-field col s12">
-          <input id="cover{{i}}" name="cover" #cover="ngModel" type="text" class="validate" [(ngModel)]="music.cover"
+          <input id="cover{{i}}" name="cover{{i}}" #cover="ngModel" type="text" class="validate" [(ngModel)]="music.cover"
             required>
           <label for="cover{{i}}">Capa (link da imagem)</label>
         </div>
         <div class="input-field col s12">
-          <input id="file{{i}}" name="file" #file="ngModel" type="text" class="validate" [(ngModel)]="music.file"
+          <input id="file{{i}}" name="file{{i}}" #file="ngModel" type="text" class="validate" [(ngModel)]="music.file"
             required>
           <label for="file{{i}}">Arquivo (link de acesso)</label>
         </div>

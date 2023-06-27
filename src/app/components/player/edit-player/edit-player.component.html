@@ -10,18 +10,21 @@
     <p-messages></p-messages>
     <div class="row">
       <div class="input-field col s6">
-        <input id="name" name="name" #name="ngModel" type="text" class="validate" [(ngModel)]="album.name" required>
-        <label for="name">Nome</label>
+        <input placeholder="Digite o nome..." id="name" name="name" #name="ngModel" type="text" class="validate"
+          [(ngModel)]="album.name" required>
+        <label class="active" for="name">Nome</label>
       </div>
       <div class="input-field col s6">
-        <input id="owner" name="owner" #owner="ngModel" type="text" class="validate" [(ngModel)]="album.owner" required>
-        <label for="owner">Autor</label>
+        <input placeholder="Digite o autor..." id="owner" name="owner" #owner="ngModel" type="text" class="validate"
+          [(ngModel)]="album.owner" required>
+        <label class="active" for="owner">Autor</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="link" name="link" #link="ngModel" type="text" class="validate" [(ngModel)]="album.link" required>
-        <label for="link">Link para acesso dos arquivos</label>
+        <input placeholder="Digite o link de acesso dos arquivos..." id="link" name="link" #link="ngModel" type="text"
+          class="validate" [(ngModel)]="album.link" required>
+        <label class="active" for="link">Link para acesso dos arquivos</label>
       </div>
     </div>
     <div class="row">
@@ -36,24 +39,24 @@
           </a>
         </div>
         <div class="input-field col s12">
-          <input id="title{{i}}" name="title" #title="ngModel" type="text" class="validate" [(ngModel)]="music.title"
-            required>
-          <label for="title{{i}}">Título</label>
+          <input placeholder="Digite o título..." id="title{{i}}" name="title{{i}}" #title="ngModel" type="text"
+            class="validate" [(ngModel)]="music.title" required>
+          <label class="active" for="title{{i}}">Título</label>
         </div>
         <div class="input-field col s12">
-          <input id="artist{{i}}" name="artist" #artist="ngModel" type="text" class="validate"
-            [(ngModel)]="music.artist" required>
-          <label for="artist{{i}}">Artista</label>
+          <input placeholder="Digite o nome do artista..." id="artist{{i}}" name="artist{{i}}" #artist="ngModel" type="text"
+            class="validate" [(ngModel)]="music.artist" required>
+          <label class="active" for="artist{{i}}">Artista</label>
         </div>
         <div class="input-field col s12">
-          <input id="cover{{i}}" name="cover" #cover="ngModel" type="text" class="validate" [(ngModel)]="music.cover"
-            required>
-          <label for="cover{{i}}">Capa (link da imagem)</label>
+          <input placeholder="Digite o link da imagem da capa..." id="cover{{i}}" name="cover{{i}}" #cover="ngModel"
+            type="text" class="validate" [(ngModel)]="music.cover" required>
+          <label class="active" for="cover{{i}}">Capa (link da imagem)</label>
         </div>
         <div class="input-field col s12">
-          <input id="file{{i}}" name="file" #file="ngModel" type="text" class="validate" [(ngModel)]="music.file"
-            required>
-          <label for="file{{i}}">Arquivo (link de acesso)</label>
+          <input placeholder="Digite o link de acesso do arquivo..." id="file{{i}}" name="file{{i}}" #file="ngModel"
+            type="text" class="validate" [(ngModel)]="music.file" required>
+          <label class="active" for="file{{i}}">Arquivo (link de acesso)</label>
         </div>
       </div>
       <div class="flex-space-between" style="padding: 0 0.8rem;">
