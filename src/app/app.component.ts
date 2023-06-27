@@ -18,6 +18,11 @@ export class AppComponent {
   ngOnInit() {
     this.items = [
       {
+        label: 'Tela inicial',
+        icon: 'pi pi-fw pi-home',
+        routerLink: '/',
+      },
+      {
         label: 'Usuários',
         icon: 'pi pi-pw pi-user',
         routerLink: '/user',
@@ -42,11 +47,6 @@ export class AppComponent {
         label: 'Player',
         icon: 'pi pi-fw pi-volume-up',
         routerLink: '/player',
-      },
-      {
-        label: 'Tela inicial',
-        icon: 'pi pi-fw pi-home',
-        routerLink: '/',
       },
     ];
   }
