@@ -21,11 +21,26 @@ export class UserService {
     });
   }
 
+  getIdentity() {
+    return JSON.parse(localStorage.getItem('identity') as string);
+  }
+
   isAllowed(uid: any) {
-    let flag = false;
-    this.getUser(uid).subscribe((response) => {
-      console.log(response);
+    this.getUser(uid).subscribe({
+      next: (response: any) => {
+        if (response.body.data.roles.includes('ALEGRIA_ADMIN')) {
+          let info = {
+            uid,
+            name: response.body.data.name,
+            email: response.body.data.email,
+          };
+          localStorage.setItem('identity', JSON.stringify(info));
+        }
+      },
+      error: () => {
+        localStorage.clear();
+      },
     });
-    return flag;
+    return localStorage.getItem('identity') ? true : false;
   }
 }

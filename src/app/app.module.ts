@@ -24,6 +24,8 @@ import { PlayerComponent } from './components/player/player.component';
 import { AddPlayerComponent } from './components/player/add-player/add-player.component';
 import { ListPlayerComponent } from './components/player/list-player/list-player.component';
 import { EditPlayerComponent } from './components/player/edit-player/edit-player.component';
+import { AuthGuard } from './services/auth.guard';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,7 @@ import { EditPlayerComponent } from './components/player/edit-player/edit-player
     MessagesModule,
     ConfirmDialogModule,
   ],
-  providers: [],
+  providers: [AuthGuard, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

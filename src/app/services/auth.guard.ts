@@ -1,9 +1,20 @@
-import { inject } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { Injectable } from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  RouterStateSnapshot,
+} from '@angular/router';
 import { UserService } from './user.service';
 
-export const authGuard = (next: ActivatedRouteSnapshot) => {
-  let params: any = next.params;
-  console.log(params.id);
-  return true;
-};
+@Injectable()
+export class AuthGuard implements CanActivate {
+  constructor(private _userService: UserService) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
+    let params: any = route.params;
+    return this._userService.isAllowed(params.id);
+  }
+}

@@ -6,12 +6,12 @@ import { ListPlayerComponent } from './components/player/list-player/list-player
 import { PlayerComponent } from './components/player/player.component';
 import { UserComponent } from './components/user/user.component';
 import { EditPlayerComponent } from './components/player/edit-player/edit-player.component';
-import { authGuard } from './services/auth.guard';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
     path: ':id',
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
