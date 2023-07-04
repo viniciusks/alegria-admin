@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +11,25 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent {
   title = 'alegria-admin';
 
+  identity: any;
   public items: MenuItem[];
 
-  constructor() {
+  constructor(private _router: Router, private _userService: UserService) {
     this.items = [];
   }
 
   ngOnInit() {
+    this.identity = this._userService.getIdentity();
     this.items = [
       {
         label: 'Tela inicial',
         icon: 'pi pi-fw pi-home',
-        routerLink: '/',
+        routerLink: `/${this.identity.uid}`,
       },
       {
         label: 'Usuários',
         icon: 'pi pi-pw pi-user',
-        routerLink: '/user',
+        routerLink: `/${this.identity.uid}/user`,
       },
       {
         label: 'Músicas',
@@ -46,7 +50,7 @@ export class AppComponent {
       {
         label: 'Player',
         icon: 'pi pi-fw pi-volume-up',
-        routerLink: '/player',
+        routerLink: `/${this.identity.uid}/player`,
       },
     ];
   }
