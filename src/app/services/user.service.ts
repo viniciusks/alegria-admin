@@ -25,22 +25,27 @@ export class UserService {
     return JSON.parse(localStorage.getItem('identity') as string);
   }
 
-  isAllowed(uid: any) {
+  setIdentity(uid: any) {
     this.getUser(uid).subscribe({
       next: (response: any) => {
-        if (response.body.data.roles.includes('ALEGRIA_ADMIN')) {
-          let info = {
-            uid,
-            name: response.body.data.name,
-            email: response.body.data.email,
-          };
-          localStorage.setItem('identity', JSON.stringify(info));
-        }
+        let info = {
+          uid,
+          name: response.body.data.name,
+          email: response.body.data.email,
+          roles: response.body.data.roles,
+        };
+        localStorage.setItem('identity', JSON.stringify(info));
       },
       error: () => {
         localStorage.clear();
       },
     });
     return localStorage.getItem('identity') ? true : false;
+  }
+
+  isAllowed(): boolean {
+    let identity = this.getIdentity();
+
+    return identity.roles.includes('ALEGRIA_ADMIN');
   }
 }

@@ -14,7 +14,13 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    let params: any = route.params;
-    return this._userService.isAllowed(params.id);
+    let identity = this._userService.getIdentity();
+    let params: any = route.queryParams;
+
+    if (!identity) {
+      this._userService.setIdentity(params.uid);
+    }
+
+    return this._userService.isAllowed();
   }
 }

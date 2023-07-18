@@ -19,17 +19,16 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.identity = this._userService.getIdentity();
     this.items = [
       {
         label: 'Tela inicial',
         icon: 'pi pi-fw pi-home',
-        routerLink: `/${this.identity.uid}`,
+        routerLink: `/`,
       },
       {
         label: 'Usuários',
         icon: 'pi pi-pw pi-user',
-        routerLink: `/${this.identity.uid}/user`,
+        routerLink: `/user`,
       },
       {
         label: 'Músicas',
@@ -50,7 +49,7 @@ export class AppComponent {
       {
         label: 'Player',
         icon: 'pi pi-fw pi-volume-up',
-        routerLink: `/${this.identity.uid}/player`,
+        routerLink: `/player`,
       },
     ];
   }
