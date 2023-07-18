@@ -40,7 +40,6 @@ export class UserService {
         localStorage.clear();
       },
     });
-    return localStorage.getItem('identity') ? true : false;
   }
 
   isAllowed(): boolean {
