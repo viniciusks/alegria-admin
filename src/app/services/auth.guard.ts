@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  Router,
   RouterStateSnapshot,
 } from '@angular/router';
 import { UserService } from './user.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private _userService: UserService) {}
+  constructor(private _userService: UserService, private _router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -21,6 +22,11 @@ export class AuthGuard implements CanActivate {
       this._userService.setIdentity(params.uid);
     }
 
-    return this._userService.isAllowed();
+    if (this._userService.isAllowed()) {
+      return true;
+    } else {
+      this._router.navigate(['/']);
+      return false;
+    }
   }
 }
